@@ -95,4 +95,98 @@ class Admin extends Person{
     }
 }
 
+//clases entrega de comidas
 
+class Person{
+    constructor(id,name,email,password){
+        this.id=id;
+        this.name=name;
+        this.email=email;
+        this.password=password;
+    }
+}
+
+class User extends Person{
+    constructor(id,name,email,password){
+        super(id,name,email,password);
+    }
+    realizarPedido(){
+
+    }
+    verPedidos(){
+
+    }
+}
+
+class deliveryMan extends Person{
+    constructor(id,name,email,password){
+        super(id,name,email,password);
+    }
+    aceptarEntrega(){
+
+    }
+    completarEntrega(){
+
+    }
+}
+
+class Dish{
+    constructor(name,price,description){
+        this.name=name;
+        this.price=price;
+        this.description=description;
+    }
+}
+
+class Menu{
+    constructor(platos){
+        this.platos=platos;
+    }
+    imprimirMenu(){
+
+    }
+}
+
+class physicalMenu extends Menu{
+    constructor(platos){
+        super(platos);
+    }
+    entregarMenu(){
+
+    }
+}
+
+class digitalMenu extends Menu{
+    constructor(platos,url){
+        super(platos);
+        this.url=url;
+    }
+    generarQR(){
+        
+    }
+}
+
+class Restaurant{
+    constructor(name){
+        this.name=name;
+    }
+    agregarPlato(){
+
+    }
+    eliminarPlato(){
+
+    }
+}
+
+class phisycalRestaurant extends Restaurant{
+    constructor(name,dirección){
+        super(name);
+        this.dirección=dirección;
+    }
+}
+
+class digitalRestaurant extends Restaurant{
+    constructor(name){
+        super(name);
+    }
+}
