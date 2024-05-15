@@ -59,8 +59,7 @@
 //clases tienda de puntos
 
 class Person{
-    constructor(id,name,email,password){
-        this.id=id;
+    constructor(name,email,password){
         this.name=name;
         this.email=email;
         this.password=password;
@@ -68,15 +67,18 @@ class Person{
 }
 
 class User extends Person{
-    constructor(id,name,email,password,points=0){
-        super(id,name,email,password);
+    static users = [];
+    static userID = 1;
+    constructor(name,email,password,points=0){
+        super(name,email,password);
+        this.id=User.userID;
+        User.userID++;
         this.points=points;
+        User.users.push({id:this.id,name,email,password,points})
     }
-    acumularPuntos(){
 
-    }
-    completarActividad(activityID){
-
+    completarActividad(activityID,newPoints){
+        
     }
 }
 
@@ -92,6 +94,73 @@ class Admin extends Person{
     }
     eliminarUsuario(userID){
     
+    }
+}
+
+class Product{
+    constructor(id,nombre,precioPuntos,stock){
+        this.id=id;
+        this.nombreProducto=nombre;
+        this.precioPuntos=precioPuntos;
+        this.stock=stock;
+    }
+
+    get getInfo(){
+
+    }
+
+    set updateStock(newStock){
+
+    }
+}
+
+class PhysicalProduct extends Product{
+    constructor(id,nombre,precioPuntos,stock,dimensiones){
+        super(id,nombre,precioPuntos,stock);
+        this.dimensiones=dimensiones;
+    }
+
+    sendProduct(){
+
+    }
+}
+
+class DigitalProduct extends Product{
+    constructor(id,nombre,precioPuntos,stock,url){
+        super(id,nombre,precioPuntos,stock);
+        this.url=url;
+    }
+
+    downloadProduct(){
+
+    }
+}
+
+class Activity{
+    constructor(id,nombreActividad,puntosOtorgados){
+        this.id=id;
+        this.nombreActividad=nombreActividad;
+        this.puntosOtorgados=puntosOtorgados;
+    }
+}
+
+class Order{
+    constructor(id,fecha){
+        this.id=id;
+        this.fecha=fecha;
+        this.products=[];
+    }
+
+    adicionarProducto(productID){
+        this.products.push()
+    }
+
+    confirmOrder(){
+
+    }
+
+    cancelOrder(){
+
     }
 }
 
